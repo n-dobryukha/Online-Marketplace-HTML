@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+</head>
+<body>
+	<div class="table-bordered">
+		<form id="formLogin" class="form-horizontal">
+			<div class="form-group">
+				<label for="login" class="col-sm-4 control-label">Login</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" name="login"
+						placeholder="Login" autofocus="autofocus">					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-sm-4 control-label">Password</label>
+				<div class="col-sm-4">
+					<input type="password" class="form-control" name="password"
+						placeholder="Password">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-4">
+					<button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+					<button type="button" class="btn btn-success btn-sm">As guest</button>
+					<a href="registration.html" class="btn btn-info btn-sm" role="button">Registration</a>
+				</div>
+			</div>
+		</form>
+	</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#formLogin').bootstrapValidator({
+			message : 'This value is not valid',
+			feedbackIcons : {
+				valid : 'glyphicon glyphicon-ok',
+				invalid : 'glyphicon glyphicon-remove',
+				validating : 'glyphicon glyphicon-refresh'
+			},
+			fields : {
+				login : {
+					validators: {
+	                    notEmpty: {
+	                        message: 'The login is required and cannot be empty'
+	                    }
+	                }
+				},
+				password : {
+					validators: {
+	                    notEmpty: {
+	                        message: 'The password is required and cannot be empty'
+	                    }
+	                }
+				}
+			}
+		});
+	})
+</script>
+</body>
+</html>
