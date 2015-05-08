@@ -2,160 +2,74 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Regitration</title>
+<title>Registration</title>
 <link rel="stylesheet" href="css/default.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrapValidator.min.css">
 </head>
 <body>
 	<div class="table-bordered">
-		<form id="formRegistration" class="form-horizontal">
+		<form id="formRegistration" class="form-horizontal"
+			data-bv-message="This value is not valid"
+			data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+			data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+			data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
 			<div class="form-group">
 				<label for="fullName" class="col-sm-4 control-label">Full Name</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" name="fullName" placeholder="Full Name" autofocus="autofocus">
+					<input type="text" class="form-control" id="fullName" name="fullName"
+						placeholder="Full Name" required="required" autofocus="autofocus">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="billingAddress" class="col-sm-4 control-label">Billing Address</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" name="billingAddress"
-						placeholder="Billing Address">
+					<input type="text" class="form-control" id="billingAddress" name="billingAddress"
+						placeholder="Billing Address" required="required">
 				</div>
 			</div>			
 			<div class="form-group">
 				<label for="email" class="col-sm-4 control-label">Email</label>
 				<div class="col-sm-4">
-					<input type="email" class="form-control" name="email"
-						placeholder="mail@example.com">
+					<div class="input-group">
+						<div class="input-group-addon">@</div>
+						<input type="email" class="form-control" id="email" name="email"
+							placeholder="mail@example.com" required="required">
+					</div>
 				</div>
 			</div>
 			<br/>
 			<div class="form-group">
 				<label for="login" class="col-sm-4 control-label">Login</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" name="login"
-						placeholder="Login">
+					<input type="text" class="form-control" id="login" name="login"
+						placeholder="Login" required="required" maxlength="30">
 				</div>
 			</div>			
 			<div class="form-group">
 				<label for="password" class="col-sm-4 control-label">Password</label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" name="password"
-						placeholder="Password">
+					<input type="password" class="form-control" id="password" name="password"
+						placeholder="Password" required="required">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="confirmPassword" class="col-sm-4 control-label">Confirm Password</label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" name="confirmPassword"
-						placeholder="Password">
+					<input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+						placeholder="Password" required="required">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="col-sm-offset-4 col-sm-4">
-					<button type="submit" class="btn btn-primary">Registration</button>
-					<button type="reset" class="btn btn-info" id="btnReset">Reset</button>
+					<button type="submit" class="btn btn-primary btn-sm">Registration</button>
+					<button type="reset" class="btn btn-info btn-sm" id="btnReset">Reset</button>
 				</div>
 			</div>
 		</form>
 	</div>
 	
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#formRegistration').bootstrapValidator({
-			message : 'This value is not valid',
-			feedbackIcons : {
-				valid : 'glyphicon glyphicon-ok',
-				invalid : 'glyphicon glyphicon-remove',
-				validating : 'glyphicon glyphicon-refresh'
-			},
-			fields : {
-				fullName : {
-					validators: {
-	                    notEmpty: {
-	                        message: 'The full name is required and cannot be empty'
-	                    }
-	                }
-				},
-				billingAddress : {
-					validators: {
-	                    notEmpty: {
-	                        message: 'The billing address name is required and cannot be empty'
-	                    }
-	                }
-				},
-				email : {
-					validators: {
-						notEmpty: {
-	                        message: 'The email name is required and cannot be empty'
-	                    },
-	                    emailAddress: {
-	                        message: 'The input is not a valid email address'
-	                    }
-	                }
-				},
-				login : {
-					validators: {
-	                    notEmpty: {
-	                        message: 'The login is required and cannot be empty'
-	                    },
-	                    stringLength: {
-	                        min: 6,
-	                        max: 30,
-	                        message: 'The login must be more than 6 and less than 30 characters long'
-	                    },
-	                    regexp: {
-	                        regexp: /^[a-zA-Z0-9_\.]+$/,
-	                        message: 'The login can only consist of alphabetical, number, dot and underscore'
-	                    },	                    
-	                    different: {
-	                        field: 'password,confirmPassword',
-	                        message: 'The login and password cannot be the same as each other'
-	                    }
-	                }
-				},
-				password : {
-					validators: {
-	                    notEmpty: {
-	                        message: 'The password is required and cannot be empty'
-	                    },
-	                    identical: {
-	                        field: 'confirmPassword',
-	                        message: 'The password and its confirm are not the same'
-	                    },
-	                    different: {
-	                        field: 'login',
-	                        message: 'The password cannot be the same as login'
-	                    }
-	                }
-				},
-				confirmPassword: {
-	                validators: {
-	                    notEmpty: {
-	                        message: 'The confirm password is required and cannot be empty'
-	                    },
-	                    identical: {
-	                        field: 'password',
-	                        message: 'The password and its confirm are not the same'
-	                    },
-	                    different: {
-	                        field: 'login',
-	                        message: 'The password cannot be the same as login'
-	                    }
-	                }
-	            }
-			}
-		});
-		
-		$('#btnReset').click(function() {
-	        $('#formRegistration').data('bootstrapValidator').resetForm(true);
-	    });
-	})
-</script>
+<script type="text/javascript" data-main="js/formValidator" src="js/require.js"></script>
 </body>
 </html>
