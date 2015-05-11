@@ -3,9 +3,9 @@
  */
 require.config({
 	paths: {
-        'jquery': 'http://code.jquery.com/jquery-latest.min',
+        'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min',
         'bootstrap': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min',
-        'bootstrapValidator': 'bootstrapValidator'
+        'bootstrapValidator': 'bootstrapValidator.min'
     }
 });
 
