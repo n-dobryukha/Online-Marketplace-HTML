@@ -6,28 +6,35 @@
 <link rel="stylesheet" href="css/default.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css">
-<style type="text/css">
-body { font-size: 140%; }
-</style>
 </head>
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<p class="navbar-text pull-right">
 				You are logged in as: <strong>Mr Manning</strong>
-				<a href="#" class="btn btn-default btn-sm" role="button">Logout</a>
+				<a href="login.html" class="btn btn-default btn-sm" role="button">Logout</a>
 			</p>
 		</div>
 	</nav>
-	<div class="table-bordered">
+	<div class="container-fluid">
 		<fieldset>
-			<legend>Search parameters</legend>
-		</fieldset>
-		
-		<fieldset>
-			<legend>Items</legend>
-
-			<table id="example" class="table table-striped table-bordered">
+			<legend class="h4">Items</legend>
+			<p class="btn-group-xs">
+				<button type="button" class="btn btn-primary">Show All Items</button>
+				<button type="button" class="btn btn-primary">Show My Items</button>
+				<a href="edititem.html" type="button" class="btn btn-primary" role="button">Sell</a>
+			</p>			
+			<table id="dataTable" class="table table-striped table-bordered" width="100%">
+				<col class="colWidth5">
+				<col class="colWidth10">
+				<col class="colWidth20">
+				<col class="colWidth10">
+				<col class="colWidth8">
+				<col class="colWidth8">
+				<col class="colWidth8">
+				<col class="colWidth10">
+				<col class="colWidth10">
+				<col class="colWidth10">
 				<thead>
 					<tr>
 						<th>UID</th>
@@ -42,8 +49,21 @@ body { font-size: 140%; }
 						<th>Bid</th>
 					</tr>
 				</thead>
+				<tfoot>
+					<tr>
+						<th>UID</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Seller</th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</tfoot>
 			</table>
-
 		</fieldset>
 	</div>
 <script type="text/javascript" data-main="js/dataTabler" src="js/require.js"></script>

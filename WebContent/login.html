@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="css/bootstrapValidator.min.css">
 </head>
 <body>
-	<div class="table-bordered">
+	<fieldset class="container-main">
+		<legend>Login</legend>
 		<form id="formLogin" class="form-horizontal"
 			data-bv-message="This value is not valid"
 			data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
@@ -30,14 +31,14 @@
 			</div>
 
 			<div class="form-group">
-				<div class="col-sm-offset-4 col-sm-4">
+				<div class="col-sm-offset-4 col-sm-8">
 					<button type="submit" class="btn btn-primary btn-sm">Sign in</button>
 					<a href="showitems.html" class="btn btn-success btn-sm" role="button">As guest</a>
 					<a href="registration.html" class="btn btn-info btn-sm" role="button">Registration</a>
 				</div>
 			</div>
 		</form>
-	</div>
+	</fieldset>
 <script type="text/javascript" data-main="js/formValidator" src="js/require.js"></script>
 </body>
 </html>

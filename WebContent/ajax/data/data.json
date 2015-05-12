@@ -1,16 +1,82 @@
 {
-	"data": [
-		[
-			"1",
-			"A parrot",
-			"Very beautiful bird",
-			"Mr Smith",
-			"10.00",
-			"1.50",
-			"15.00",
-			"Mrs Jonsen",
-			"24.11.2007 11:00",
-			"<div><div class='input-group input-group-sm'><input type='text' class='form-control' placeholder='0.00'><span class='input-group-btn'><button class='btn btn-default' type='button'>Bid</button></span></div></div>"
-		]
-	]
+"data": [
+	{
+	"uid": "1",
+	"title": "A parrot",
+	"description": "Very beautiful bird",
+	"seller": {
+		"id": 1,
+		"name": "Mr Smith"
+	},
+	"startPrice": "10.00",
+	"bidInc": "1.50",
+	"bestOffer": "15.00",
+	"bidder": {
+		"id": 4,
+		"name": "Mrs Jonsen"
+	},
+	"stopDate": {
+		"display": "24.11.2007 11:00",
+		"timestamp": "1195902000"
+	},
+	"action": "bid"
+  },
+  {
+  	"uid": "2",
+	"title": "A clocks",
+	"description": "Old clocks with cockoo",
+	"seller": {
+		"id": 1,
+		"name": "Mr Smith"
+	},
+	"startPrice": "10.00",
+	"bidInc": "",
+	"bestOffer": "",
+	"bidder": {"id": "", "name": ""},
+	"stopDate": {
+		"display": "28.11.2007 11:00",
+		"timestamp": "1196247600"
+	},
+	"action": "buy"
+  },
+  {
+  	"uid": "5",
+	"title": "A book",
+	"description": "Hibernate in action",
+	"seller": {
+		"id": 2,
+		"name": "Mr Manning"
+	},
+	"startPrice": "25.00",
+	"bidInc": "5.00",
+	"bestOffer": "50.00",
+	"bidder": {
+		"id": 5,
+		"name": "Kent Back"
+	},
+	"stopDate": {
+		"display": "02.11.2007 18:00",
+		"timestamp": "1194026400"
+	},
+	"action": ""
+  },
+  {
+  	"uid": "9",
+	"title": "A dress",
+	"description": "Red coctail dress",
+	"seller": {
+		"id": 3,
+		"name": "Mrs Kanningan"
+	},
+	"startPrice": "200.00",
+	"bidInc": "50.00",
+	"bestOffer": "",
+	"bidder": {"id": "", "name": ""},
+	"stopDate": {
+		"display": "12.12.2007 11:00",
+		"timestamp": "1197457200"
+	},
+	"action": "bid"
+  }
+  ]
 }

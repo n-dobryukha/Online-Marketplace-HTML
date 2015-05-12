@@ -3,16 +3,19 @@
  */
 require.config({
 	paths: {
-        'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min',
-        'bootstrap': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min',
-        'bootstrapValidator': 'bootstrapValidator.min'
+        'jquery': '//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min',
+        'bootstrap': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min'
+    },
+    shim: {
+    	'bootstrapValidator.min': ['jquery']
     }
 });
 
 require(
-	['jquery', 'bootstrap', 'bootstrapValidator'],
+	['jquery', 'bootstrap', 'bootstrapValidator.min'],
 	function( $, bootstrap, bootstrapValidator ){
-    	$(document).ready(function() {
+    	
+		$(document).ready(function() {
     		$('#formLogin').bootstrapValidator();
     		
     		$('#formRegistration').bootstrapValidator({
@@ -61,12 +64,6 @@ require(
     		
     		$('#formEditItem')
 			.bootstrapValidator({
-				message : 'This value is not valid',
-				feedbackIcons : {
-					valid : 'glyphicon glyphicon-ok',
-					invalid : 'glyphicon glyphicon-remove',
-					validating : 'glyphicon glyphicon-refresh'
-				},
 				fields : {
 					startPrice : {
 						validators: {
